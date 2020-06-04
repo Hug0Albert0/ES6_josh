@@ -15,12 +15,22 @@ body {
    transition: 0.3s;
    border-radius: 10px; /* 5px rounded corners */
    display: flex;
-   justify-content: center;
+   justify-content: flex-start;
+   flex-direction: column;
 }
 
-#titulo { 
+#juego {
+   margin-right: 40px;
+   margin-left: 40px;
+}
+
+#titulo {
    display: flex;
    align-items: center;
    flex-direction: column;
-   font-family: 'Cabin', sans-serif;
+   font-family: 'Cabin', sans-serif
+}
+
+#instrucciones {
+   text-align: justify;
 }
