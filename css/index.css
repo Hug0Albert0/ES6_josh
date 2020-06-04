@@ -34,3 +34,22 @@ body {
 #instrucciones {
    text-align: justify;
 }
+
+#btnEnviar{
+   background-color:#6EF8A7;
+   border-radius: 10px; /* 5px rounded corners */
+   width: 100px;
+   height: 100%;
+   
+
+
+}
+#respuesta{
+   width: 200px;
+   height: 40px;
+}
+
+#datos{
+   display: flex;
+   justify-content: center;
+}
