@@ -8,27 +8,42 @@ document.getElementById("btnEnviar").addEventListener(
       contador++;
       console.log(contador);
       */
-      let valorRespuesta = document.getElementById("respuesta").value;
-      if(valorRespuesta) {
-         console.log(valorRespuesta);
-         if(isNaN( valorRespuesta)){
+
+
+      let min = 1;
+      let max = 100;
+      var valorRespuesta;
+
+
+
+      for(var intentos = 0; intentos < 3; intentos++ ){
+         let valorRespuesta = document.getElementById("respuesta").value;
+         
+
+          if(valorRespuesta>= min && valorRespuesta <= max){
+            console.log(intentos)
+
             if (numeroCorrecto > valorRespuesta){
                console.log("¡Fallaste, el numero es mayor a la respuesta correcta!");
             } else if(numeroCorrecto < valorRespuesta){
                console.log("¡Fallaste el numero es menor a la respuesta correcta!")
             }
-            else{
+            else if(numeroCorrecto == valorRespuesta){
                console.log("Felicidades, has ganado!");
             }
+
+         }else{
+            console.log("Ingrese un valor valido");
          }
-         else{
-            ("No es un valor numerico lo siento :(")
-            return
-         }
-         
-         //Hacer condicionales if - else para determinar si la respuesta es menor, mayor o igual que numeroCorrecto
-      } else{
-         console.log("Aun no ingresas un numero, intentalo de nuevo :(");
       }
+      valorRespuesta
+
+      if(valorRespuesta == numeroCorrecto){
+         alert("Felicidades adivinaste el numero en " +intentos+ " intentos.");
+      } else {
+         console.log("¡Te has terminado tus intentos, vuelve a intentarlo!");
+      }
+
    }
-);
+   );
+
