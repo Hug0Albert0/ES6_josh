@@ -17,7 +17,6 @@ body {
    display: flex;
    justify-content: flex-start;
    flex-direction: column;
-   background-color:tomato ;
 }
 
 #juego {
@@ -31,7 +30,6 @@ body {
    align-items: center;
    flex-direction: column;
    font-family: 'Cabin', sans-serif;
-   background-color:tan;
    height: 35%;
 }
 
@@ -60,7 +58,7 @@ body {
 }
 
 #intentos {
-   height: 45%;
+   height: 40%;
    width: 100%;
    background-color: rebeccapurple;
 }
