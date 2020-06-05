@@ -15,18 +15,18 @@ document.getElementById("btnEnviar").addEventListener(
       var valorRespuesta;
 
 
-
-      for(var intentos = 0; intentos < 3; intentos++ ){
+      for(var intentos = 0; intentos < 3 ; intentos++ ){
          let valorRespuesta = document.getElementById("respuesta").value;
          
 
-          if(valorRespuesta>= min && valorRespuesta <= max){
+          if(valorRespuesta >= min && valorRespuesta <= max){
             console.log(intentos)
 
             if (numeroCorrecto > valorRespuesta){
                console.log("¡Fallaste, el numero es mayor a la respuesta correcta!");
-            } else if(numeroCorrecto < valorRespuesta){
-               console.log("¡Fallaste el numero es menor a la respuesta correcta!")
+            } 
+            else if(numeroCorrecto < valorRespuesta){
+               console.log("¡Fallaste el numero es menor a la respuesta correcta!");
             }
             else if(numeroCorrecto == valorRespuesta){
                console.log("Felicidades, has ganado!");
