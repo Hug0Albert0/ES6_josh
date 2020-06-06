@@ -1,5 +1,5 @@
 body {
-   background-color: #6EF8A7 ;
+   background-color:slateblue ;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -10,7 +10,6 @@ body {
    background-color: white;
    width: 500px;
    height: 500px;
-   margin-top: 200px;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    transition: 0.3s;
    border-radius: 10px; /* 5px rounded corners */
@@ -31,34 +30,22 @@ body {
    flex-direction: column;
    font-family: 'Cabin', sans-serif;
    height: 35%;
+   margin-bottom: 15px;
+   padding-top: 20px;
 }
 
 #instrucciones {
    text-align: justify;
 }
 
-#btnEnviar{
-   background-color:#6EF8A7;
-   border-radius: 5px;
-   width: 100px;
-   height: 50%;
-}
-
-#respuesta{
-   width: 200px;
-   height: 40px;
-   border-radius: 5px;
-}
-
-#datos{
+#datos {
    display: flex;
-   justify-content: center;
-   height: 20%;
-   background-color: pink;
 }
 
-#intentos {
-   height: 40%;
-   width: 100%;
-   background-color: rebeccapurple;
+#btnEnviar {
+   margin-left: 10px;
+}
+
+#emojiRocket {
+   font-size: 25px;
 }
