@@ -9,7 +9,6 @@ let btnEnviar = document.getElementById("btnEnviar");
 const fnCargarJuego = () => {
    intentos = 3;
    numeroCorrecto = Math.floor(Math.random() * 100) + 1;
-   console.log(numeroCorrecto)
    contenedorMensaje.innerHTML = "";
    inputRespuesta.value = "";
    btnReiniciar.classList.add("hidden");
