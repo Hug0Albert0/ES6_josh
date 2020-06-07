@@ -4,6 +4,7 @@ let mensaje = "";
 let inputRespuesta = document.getElementById("respuesta");
 let contenedorMensaje = document.getElementById("mensajes");
 let btnReiniciar = document.getElementById("btnReintentar");
+let btnEnviar = document.getElementById("btnEnviar");
 
 const fnCargarJuego = () => {
    intentos = 3;
@@ -11,6 +12,8 @@ const fnCargarJuego = () => {
    contenedorMensaje.innerHTML = "";
    inputRespuesta.value = "";
    btnReiniciar.classList.add("hidden");
+   inputRespuesta.disabled = false;
+   btnEnviar.disabled = false;
 }
 
 fnCargarJuego();
@@ -61,6 +64,8 @@ const fnJugar = () => {
                contenedorMensaje.innerHTML = mensaje;
                inputRespuesta.value = "";
                btnReiniciar.classList.remove("hidden");
+               inputRespuesta.disabled = true;
+               btnEnviar.disabled = true;
             }
          } else {
             fnError();
@@ -84,6 +89,8 @@ const fnTerminaTurno = () => {
    contenedorMensaje.innerHTML = mensaje;
    inputRespuesta.value = "";
    btnReiniciar.classList.remove("hidden");
+   inputRespuesta.disabled = true;
+   btnEnviar.disabled = true;
 }
 
 const fnComprobarIntentos = () => {
