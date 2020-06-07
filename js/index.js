@@ -4,6 +4,7 @@ let mensaje = "";
 let inputRespuesta = document.getElementById("respuesta");
 let contenedorMensaje = document.getElementById("mensajes");
 let btnReiniciar = document.getElementById("btnReintentar");
+let btnEnviar = document.getElementById("btnEnviar");
 
 const fnCargarJuego = () => {
    intentos = 3;
@@ -11,6 +12,8 @@ const fnCargarJuego = () => {
    contenedorMensaje.innerHTML = "";
    inputRespuesta.value = "";
    btnReiniciar.classList.add("hidden");
+   inputRespuesta.disabled = false;
+   btnEnviar.disabled = false;
 }
 
 fnCargarJuego();
@@ -39,8 +42,9 @@ const fnJugar = () => {
             if (valorRespuesta > numeroCorrecto){
               intentos--;
                mensaje = `
-                  <h4>¡Fallaste, el numero es mayor a la respuesta correcta!
-                  Te quedan ${intentos} intento(s).</h4>
+                  <h4>¡Fallaste!</h4>
+                  <h5>El número es mayor a la respuesta correcta!
+                  Te quedan ${intentos} intento(s).</h5>
                `;
                contenedorMensaje.innerHTML = mensaje;
                inputRespuesta.value = "";
@@ -49,18 +53,23 @@ const fnJugar = () => {
             else if(valorRespuesta < numeroCorrecto){
               intentos--;
                mensaje = `
-                  <h4>¡Fallaste el numero es menor a la respuesta correcta!
-                  Te quedan ${intentos} intento(s).</h4>
+                  <h4>¡Fallaste!</h4>
+                  <h5>El número es menor a la respuesta correcta!
+                  Te quedan ${intentos} intento(s).</h5>
                `;
                contenedorMensaje.innerHTML = mensaje;
                inputRespuesta.value = "";
                fnComprobarIntentos();
             }
             else {
-               mensaje = `<h4>Felicidades adivinaste el numero: ${numeroCorrecto}</h4>`;
+               mensaje = `
+                  <h4>¡¡¡Felicidades!!!</h4>
+                  <h5> Has adivinado, tu número de la suerte es: ${numeroCorrecto}!!!</h5>`;
                contenedorMensaje.innerHTML = mensaje;
                inputRespuesta.value = "";
                btnReiniciar.classList.remove("hidden");
+               inputRespuesta.disabled = true;
+               btnEnviar.disabled = true;
             }
          } else {
             fnError();
@@ -80,10 +89,14 @@ const fnError = () => {
 }
 
 const fnTerminaTurno = () => {
-   mensaje = `<h4>Has perdido, ya no te quedan intentos</h4>`;
+   mensaje = `
+      <h4>Has perdido</h4>
+      <h5>Ya no te quedan intentos</h5>`;
    contenedorMensaje.innerHTML = mensaje;
    inputRespuesta.value = "";
    btnReiniciar.classList.remove("hidden");
+   inputRespuesta.disabled = true;
+   btnEnviar.disabled = true;
 }
 
 const fnComprobarIntentos = () => {
