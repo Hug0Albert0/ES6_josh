@@ -21,6 +21,7 @@ document.onkeydown = (evento) => {
       fnJugar();
    }
 }
+console.log(numeroCorrecto)
 
 const fnJugar = () => {
    if (intentos > 0) {
@@ -31,7 +32,7 @@ const fnJugar = () => {
                if (valorRespuesta > numeroCorrecto){
                   intentos--;
                   mensaje = `
-                     <h4>¡Fallaste, el numero es mayor a la respuesta correcta!
+                     <h4 align='center'>¡Fallaste, el numero es mayor a la respuesta correcta! 😓👆👆
                      Te quedan ${intentos} intento(s).</h4>
                   `;
                   contenedorMensaje.innerHTML = mensaje;
@@ -40,14 +41,16 @@ const fnJugar = () => {
                else if(valorRespuesta < numeroCorrecto){
                   intentos--;
                   mensaje = `
-                     <h4>¡Fallaste el numero es menor a la respuesta correcta!
+                     <h4 align='center'>¡Fallaste el numero es menor a la respuesta correcta! 😓👇👇
                      Te quedan ${intentos} intento(s).</h4>
                   `;
                   contenedorMensaje.innerHTML = mensaje;
                   inputRespuesta.value = "";
                }
                else {
-                  mensaje = `<h4>Felicidades adivinaste el numero: ${numeroCorrecto}</h4>`;
+                  mensaje = `<h4 align='center'>🎉🎉¡Felicidades adivinaste el numero: ${numeroCorrecto}!🥳🏆🎉🎈🎈
+                ¡Lo resolviste al ${intentos} intento(s)!.</h4>
+                  `;
                   contenedorMensaje.innerHTML = mensaje;
                   inputRespuesta.value = "";
                }
@@ -61,14 +64,14 @@ const fnJugar = () => {
          fnError();
       }
    } else {
-      mensaje = `<h4>Has perdido, ya no te quedan intentos</h4>`;
+      mensaje = `<h4 align='center'>¡Has perdido, ya no te quedan intentos!😭😭😭.</h4>`;
       contenedorMensaje.innerHTML = mensaje;
       inputRespuesta.value = "";
    }
 }
 
 const fnError = () => {
-   mensaje = `<h4>Ingresa un número entero del 1 al 100</h4>`;
+   mensaje = `<h4 align='center'>Ingresa un número entero del 1 al 100 😬.</h4>`;
    contenedorMensaje.innerHTML = mensaje;
    inputRespuesta.value = "";
 }
