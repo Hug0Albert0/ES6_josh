@@ -40,7 +40,9 @@ body {
 
 #datos {
    display: flex;
-   margin-bottom: 50px;
+   margin-bottom: 40px;
+   margin-top: 40px;
+
 }
 
 #btnEnviar {
@@ -49,4 +51,8 @@ body {
 
 #emojiRocket {
    font-size: 25px;
+}
+
+#reintentar{
+   text-align: center;
 }
