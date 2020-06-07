@@ -3,10 +3,14 @@ let numeroCorrecto = null;
 let mensaje = "";
 let inputRespuesta = document.getElementById("respuesta");
 let contenedorMensaje = document.getElementById("mensajes");
+let btnReiniciar = document.getElementById("btnReintentar");
 
 const fnCargarJuego = () => {
    intentos = 3;
    numeroCorrecto = Math.floor(Math.random() * 100) + 1;
+   contenedorMensaje.innerHTML = "";
+   inputRespuesta.value = "";
+   btnReiniciar.classList.add("hidden");
 }
 
 fnCargarJuego();
@@ -21,7 +25,12 @@ document.onkeydown = (evento) => {
       fnJugar();
    }
 }
-
+document.getElementById("btnReintentar").addEventListener(
+   "click",
+   () => {
+      fnCargarJuego();
+   }
+);
 const fnJugar = () => {
    let valorRespuesta = inputRespuesta.value;
    if (valorRespuesta) {
@@ -51,6 +60,7 @@ const fnJugar = () => {
                mensaje = `<h4>Felicidades adivinaste el numero: ${numeroCorrecto}</h4>`;
                contenedorMensaje.innerHTML = mensaje;
                inputRespuesta.value = "";
+               btnReiniciar.classList.remove("hidden");
             }
          } else {
             fnError();
@@ -73,6 +83,7 @@ const fnTerminaTurno = () => {
    mensaje = `<h4>Has perdido, ya no te quedan intentos</h4>`;
    contenedorMensaje.innerHTML = mensaje;
    inputRespuesta.value = "";
+   btnReiniciar.classList.remove("hidden");
 }
 
 const fnComprobarIntentos = () => {
