@@ -32,23 +32,23 @@ const fnJugar = () => {
                if (valorRespuesta > numeroCorrecto){
                   intentos--;
                   mensaje = `
-                     <h4 align='center'>¡Fallaste, el numero es mayor a la respuesta correcta! 😓👆👆
+                     <h4 align='center'>¡Fallaste, el numero es mayor a la respuesta correcta! 😓👆👆<br />
                      Te quedan ${intentos} intento(s).</h4>
                   `;
                   contenedorMensaje.innerHTML = mensaje;
                   inputRespuesta.value = "";
                }
                else if(valorRespuesta < numeroCorrecto){
-                  intentos--;
+                  intentos++;
                   mensaje = `
-                     <h4 align='center'>¡Fallaste el numero es menor a la respuesta correcta! 😓👇👇
+                     <h4 align='center'>¡Fallaste el numero es menor a la respuesta correcta! 😓👇👇<br />
                      Te quedan ${intentos} intento(s).</h4>
                   `;
                   contenedorMensaje.innerHTML = mensaje;
                   inputRespuesta.value = "";
                }
                else {
-                  mensaje = `<h4 align='center'>🎉🎉¡Felicidades adivinaste el numero: ${numeroCorrecto}!🥳🏆🎉🎈🎈
+                  mensaje = `<h4 align='center'>🎉🎉¡Felicidades adivinaste el numero: ${numeroCorrecto}!🥳🏆🎉🎈🎈 <br />
                 ¡Lo resolviste al ${intentos} intento(s)!.</h4>
                   `;
                   contenedorMensaje.innerHTML = mensaje;
